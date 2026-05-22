@@ -170,9 +170,9 @@ def calculate_token_estimate(file_obj) -> str:
     
     warning = ""
     if total_input > max_context:
-        warning = f"\n\n⚠️ **Warning:** Total input ({total_input:,} tokens) exceeds recommended limit ({max_context:,} tokens). Consider using a shorter document."
+        warning = f"\n\n**Warning:** Total input ({total_input:,} tokens) exceeds recommended limit ({max_context:,} tokens). Consider using a shorter document."
     elif total_input > max_context * 0.8:
-        warning = f"\n\n⚠️ **Note:** Approaching token limit ({total_input:,} / {max_context:,} tokens)"
+        warning = f"\n\n**Note:** Approaching token limit ({total_input:,} / {max_context:,} tokens)"
     
     return f"""### Token Estimate
 
@@ -343,7 +343,7 @@ def analyze_document(file_obj):
 def check_rate_limit():
     """Check GitHub Models API rate limit."""
     if not GITHUB_TOKEN:
-        return "❌ No GitHub token available"
+        return "No GitHub token available"
     
     try:
         response = requests.post(
@@ -365,15 +365,15 @@ def check_rate_limit():
                     lines.append(f"**{key}:** `{value}`")
             return "\n".join(lines)
         else:
-            return f"❌ Failed to get rate limit (HTTP {response.status_code}): {response.text}"
+            return f"Failed to get rate limit (HTTP {response.status_code}): {response.text}"
             
     except Exception as e:
-        return f"❌ Error: `{type(e).__name__}: {str(e)}`"
+        return f"Error: `{type(e).__name__}: {str(e)}`"
 
 
 # Build Gradio UI
 with gr.Blocks(title="Documentation Rubric Evaluator", theme=gr.themes.Soft()) as app:
-    gr.Markdown("# 📋 Documentation Rubric Evaluator")
+    gr.Markdown("# Documentation Rubric Evaluator")
     gr.Markdown("Evaluate technical IT documentation against a 14-criteria ISO/IEC 27001:2022 rubric using GPT-4o.")
     
     with gr.Row():
@@ -385,7 +385,7 @@ with gr.Blocks(title="Documentation Rubric Evaluator", theme=gr.themes.Soft()) a
                 type="filepath"
             )
             token_estimate = gr.Markdown(value="Upload a file to see token estimate")
-            analyze_btn = gr.Button("🔍 Analyze Document", variant="primary", size="lg")
+            analyze_btn = gr.Button("Analyze Document", variant="primary", size="lg")
     
     gr.Markdown("---")
     
@@ -421,7 +421,7 @@ with gr.Blocks(title="Documentation Rubric Evaluator", theme=gr.themes.Soft()) a
     gr.Markdown("### GitHub Models API")
     
     with gr.Row():
-        rate_limit_btn = gr.Button("🔍 Check Rate Limit", variant="secondary")
+        rate_limit_btn = gr.Button("Check Rate Limit", variant="secondary")
     
     rate_limit_result = gr.Markdown()
     
@@ -434,10 +434,10 @@ with gr.Blocks(title="Documentation Rubric Evaluator", theme=gr.themes.Soft()) a
 
 if __name__ == "__main__":
     if not GITHUB_TOKEN:
-        print("⚠️  Warning: No GitHub token found!")
+        print("Warning: No GitHub token found!")
         print("   Run 'gh auth login' or set GITHUB_TOKEN environment variable")
     else:
-        print("✅ GitHub token found")
+        print("GitHub token found")
     
-    print("\n🚀 Starting Documentation Rubric Evaluator...")
+    print("\nStarting Documentation Rubric Evaluator...")
     app.launch(server_port=5000)
