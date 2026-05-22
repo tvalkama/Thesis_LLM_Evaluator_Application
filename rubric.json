@@ -1,0 +1,164 @@
+{
+  "scale": {
+    "0": "Not present",
+    "1": "Partial",
+    "2": "Adequate",
+    "3": "Exemplary"
+  },
+  "criteria": [
+    {
+      "number": 1,
+      "group": "A",
+      "name": "Document ownership",
+      "descriptors": {
+        "0": "No owner or author identified",
+        "1": "Author named but no current role or contact information",
+        "2": "Owner identified with role and contact information",
+        "3": "Owner identified with role, contact, and explicit review responsibility"
+      }
+    },
+    {
+      "number": 2,
+      "group": "A",
+      "name": "Last review date",
+      "descriptors": {
+        "0": "No indication of when the document was last reviewed",
+        "1": "Date of original creation present but no subsequent review record",
+        "2": "Last review date present and within organisational policy period",
+        "3": "Last review date present, within policy period, and accompanied by reviewer identification"
+      }
+    },
+    {
+      "number": 3,
+      "group": "A",
+      "name": "Review schedule",
+      "descriptors": {
+        "0": "No indication of when the document should next be reviewed",
+        "1": "Review frequency stated in policy but not in the document itself",
+        "2": "Next review date or schedule explicitly stated in the document",
+        "3": "Next review date stated, with trigger conditions for ad-hoc review (e.g. system changes) also identified"
+      }
+    },
+    {
+      "number": 4,
+      "group": "A",
+      "name": "Version control",
+      "descriptors": {
+        "0": "No versioning information present",
+        "1": "Version identifier present but no history or date of change",
+        "2": "Version identifier, date of last change, and author of last change present",
+        "3": "Full changelog with version, date, author, and summary of changes for each revision"
+      }
+    },
+    {
+      "number": 5,
+      "group": "A",
+      "name": "Information classification and labelling",
+      "descriptors": {
+        "0": "No classification indication present on the document",
+        "1": "Classification stated informally but not using the organisation's scheme",
+        "2": "Document carries an appropriate classification label per organisational scheme",
+        "3": "Classification label present, plus handling restrictions and any data-type-specific notes"
+      }
+    },
+    {
+      "number": 6,
+      "group": "B",
+      "name": "Purpose and audience",
+      "descriptors": {
+        "0": "Document does not state its purpose or intended audience",
+        "1": "Purpose implied through content but not declared; audience not identified",
+        "2": "Purpose explicitly stated near the start of the document; audience identified",
+        "3": "Purpose, audience, and scope boundaries explicitly stated in a summary section"
+      }
+    },
+    {
+      "number": 7,
+      "group": "B",
+      "name": "Structural appropriateness",
+      "descriptors": {
+        "0": "No discernible structural organisation; content presented as undifferentiated prose",
+        "1": "Some headings or breaks present but structure does not match content type",
+        "2": "Structure appropriate to content type (numbered steps for procedures, sections for reference, etc.)",
+        "3": "Structure appropriate to content type, with summary, navigation aids (table of contents, headings), and visual aids (diagrams) where they support comprehension"
+      }
+    },
+    {
+      "number": 8,
+      "group": "B",
+      "name": "Completeness vs purpose",
+      "descriptors": {
+        "0": "Document does not address what its purpose claims to cover",
+        "1": "Document addresses purpose partially; significant elements missing or referenced without explanation",
+        "2": "Document addresses all elements its purpose implies; for procedures, this includes the content elements specified in ISO 27002 §5.37 (responsibilities, steps, error handling, support contacts, recovery procedures)",
+        "3": "All purpose-relevant content present, plus explicit notes on what is out of scope"
+      }
+    },
+    {
+      "number": 9,
+      "group": "B",
+      "name": "Clarity and self-containedness",
+      "descriptors": {
+        "0": "Document assumes substantial prior knowledge or context that is not provided or referenced",
+        "1": "Document partially clarifies prerequisites but leaves significant unstated assumptions",
+        "2": "Document either provides necessary prerequisite context or references where it can be found; terminology is consistent",
+        "3": "Document is self-contained for its intended audience, including a glossary or terminology section where domain-specific terms appear; references to external sources are explicit"
+      }
+    },
+    {
+      "number": 10,
+      "group": "B",
+      "name": "Internal and cross-document consistency",
+      "descriptors": {
+        "0": "Same concept referred to by different terms or vice versa; contradictions between sections; terminology inconsistent with related documents",
+        "1": "Mostly consistent internally but with several visible mismatches or contradictions",
+        "2": "Internally consistent in terminology and presentation; aligned with the conventions of related documents",
+        "3": "Internally consistent, aligned with related documents, and any deliberate deviations from organisational convention are explicitly justified"
+      }
+    },
+    {
+      "number": 11,
+      "group": "B",
+      "name": "Cross-references and verifiability",
+      "descriptors": {
+        "0": "No cross-references to related documents, systems, or sources; no way to verify factual claims",
+        "1": "Some cross-references present but broken, outdated, or insufficient",
+        "2": "Working cross-references to related documents, systems, and where applicable, sources for factual claims",
+        "3": "Cross-references are working, current, contextualised (the reader knows why the link matters), and the document explicitly identifies how its content can be verified"
+      }
+    },
+    {
+      "number": 12,
+      "group": "C",
+      "name": "Compliance traceability",
+      "descriptors": {
+        "0": "Document does not identify any ISO controls or organisational policies it supports or implements. (N/A if the document is not subject to ISO/IEC 27001 controls, e.g. a glossary or contact list.)",
+        "1": "Document references ISO controls or policies generically without specifying which apply",
+        "2": "Document explicitly names the ISO controls and organisational policies it implements or supports",
+        "3": "All applicable controls and policies named, with explicit cross-references to the controlling documents or sections of the standard"
+      }
+    },
+    {
+      "number": 13,
+      "group": "C",
+      "name": "Access control coverage",
+      "descriptors": {
+        "0": "Document covers a system or process but does not address access control. (N/A if the document does not describe a system or process involving access decisions.)",
+        "1": "Access control mentioned but requirements not described",
+        "2": "Access control requirements described: who may access, the basis of access, and the access management process",
+        "3": "All §5.18 elements present plus revocation procedures, periodic review schedule, and reference to organisational access control policy"
+      }
+    },
+    {
+      "number": 14,
+      "group": "C",
+      "name": "Operational completeness vs §5.37",
+      "descriptors": {
+        "0": "Document is an operational procedure but addresses none of the elements specified in §5.37. (N/A if the document is not an operational procedure.)",
+        "1": "Some §5.37 elements present (responsibilities OR error handling OR support contacts) but most absent",
+        "2": "All §5.37 elements present: responsible individuals, configuration steps, information handling, backup, scheduling, error handling, support contacts, recovery procedures",
+        "3": "All §5.37 elements present plus explicit interdependencies with other procedures and tested validity (e.g. exercise records)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+@startuml Jira Task Creator Overview
+
+skinparam backgroundColor #FEFEFE
+skinparam handwritten false
+skinparam defaultFontSize 14
+skinparam shadowing false
+
+skinparam activity {
+    BackgroundColor #E8F4FD
+    BorderColor #2196F3
+    FontColor #333333
+    ArrowColor #666666
+}
+
+skinparam note {
+    BackgroundColor #FFF9C4
+    BorderColor #FFC107
+}
+
+title **Jira Task Creator** \nAutomated Task Generation Tool
+
+|#LightBlue|User|
+start
+:Write a **brief description**\nof the work you need done;
+note right
+  Example:
+  "Add login page
+  with password reset"
+end note
+
+|#LightGreen|AI Assistant (GPT-4o)|
+:Reads your description and\n**generates a complete task**;
+note right
+  The AI creates:
+  • Clear title
+  • Detailed description
+  • Acceptance criteria
+  • Story points estimate
+  • Suggested category
+end note
+
+|#LightBlue|User|
+:Review the **generated task**\nin the preview panel;
+
+if (Looks good?) then (Yes)
+  :Optionally add:\n• Assignee name\n• Epic link;
+  
+  |#LightCoral|Jira System|
+  :Click **"Create in Jira"**\nto send the task;
+  
+  :✅ **Task created!**\nReceive link to new issue;
+  stop
+  
+else (No)
+  |#LightBlue|User|
+  :Edit your description\nand try again;
+  note right
+    Refine your input
+    for better results
+  end note
+  end
+endif
+
+legend right
+  **What you need:**
+  ─────────────────
+  • GitHub account (for AI access)
+  • Jira account (to create tasks)
+  
+  **The tool handles:**
+  ─────────────────
+  • Writing professional descriptions
+  • Formatting for Jira
+  • Setting correct fields
+endlegend
+
+@enduml
